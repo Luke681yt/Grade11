@@ -1,29 +1,30 @@
-def get_input():
-    while True:
-        n=input("enter an amount of time")
-        unit=input("enter a unit of time; days hours mins secs")
-        if n.isdigit() and unit in ["secs","mins","hours","days"]:
-            return int(n), unit
-
-
-def convert_time(n, unit):
-    seconds=convert_to_seconds(n, unit)
-    days=seconds//(24*60*60)
-    hours=seconds%(24*60*60) // (60*60)
-    mins=seconds%(24*60*60)%(60*60)//60
-    secs=seconds%(24*60*60)%(60*60)%60
-    return days, hours, mins, secs
-
-def convert_to_seconds(n, unit):
-    if unit=="days":
-        return(n*60*60*24)
-    if unit=="hours":
-        return(n*60*60)
-    if unit=="minutes":
-        return(n*60)
-    if unit=="seconds":
-        return n
-
-n, unit=get_input()
-days, hours, mins, secs = convert_time(n, unit)
-print("hi")
+#get letter inputs and math to a grade than give an average
+num=input("enter no of grades fr ong\n")
+accum=float(0)
+for i in range(num):
+    letter_grade=input("enter letter grade:\n")
+    if letter_grade=="A+":
+        accum=accum+4
+    if letter_grade=="A":
+        accum=accum+4
+    if letter_grade=="A-":
+        accum=accum+3.7
+    if letter_grade=="B+":
+        accum=accum+3.3
+    if letter_grade=="B":
+        accum=accum+3
+    if letter_grade=="B-":
+        accum=accum+2.7
+    if letter_grade=="C+":
+        accum=accum+2.3
+    if letter_grade=="C":
+        accum=accum+2
+    if letter_grade=="C-":
+        accum=accum+1.7
+    if letter_grade=="D+":
+        accum=accum+1.3
+    if letter_grade=="D":
+        accum=accum+1
+    if letter_grade=="F":
+        accum=accum+0
+print(round(accum/num, 1))

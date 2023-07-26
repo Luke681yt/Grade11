@@ -1,0 +1,1 @@
+a=int("enter sentence")

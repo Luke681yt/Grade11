@@ -1,8 +1,13 @@
-def count_occurances(string,item):
-    counter=0
-    for i in string:
-        if i==item:
-            counter+=1
-    return counter
+n=int(input("input how many numeros of the fibonnica thing you want fr"))
+a=1
+b=1
+s=0
+accum=0
+for i in range(n):
+    print(a)
+    s=s+a
+    temp=b
+    b=a+b
+    a=temp
 
-print(count_occurances("I like chimpanzees","e"))
+print(s)
